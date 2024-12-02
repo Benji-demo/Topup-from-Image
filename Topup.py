@@ -1,10 +1,10 @@
 import tkinter as tk
 import pyautogui
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract'
 import re
 import subprocess
 import time
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract'
 
 print("Topup Using OCR")
 print("Please draw a box around the numbers you want to topup using the mouse right click button")
@@ -14,6 +14,7 @@ class ResizableTransparentBox(tk.Tk):
         # Configure the window
         self.overrideredirect(True)
         self.attributes('-alpha', 0.5)  # Set transparency (0.0 to 1.0)
+        self.attributes('-topmost', True) # Keep the window always on top
         self.geometry('200x200+100+100')  # Set initial size and position
         # Create a label as the transparent box
         self.label = tk.Label(self, text="", bg='black')
